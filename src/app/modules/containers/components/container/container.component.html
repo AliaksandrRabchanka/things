@@ -1,0 +1,28 @@
+<div class="container-wrapper" [ngClass]="{'available': container.canUseToHide, 'selected': container.selected,'hidden': container.isHidden}">
+    <p>{{container.title}}</p>
+    <ul>
+        <li>
+            <span>{{container.description}}</span>
+        </li>
+        <li>
+            <span>volume: </span>
+            <span>{{container.volume}}</span>
+        </li>
+        <li>
+            <span>available volume: </span>
+            <span>{{container.availableVolume}}</span>
+        </li>
+        <li *ngIf="container.parent">
+            <span>parent container: </span>
+            <span>{{container.parent}}</span>
+        </li>
+    </ul>
+
+    <div class="container-controls">
+        <button (click)="onEditContainer()">edit</button>
+        <button [disabled]="container.isHidden" (click)="onHideContainer()">hide</button>
+        <button [disabled]="!container.canUseToHide" (click)="onUseToHideContainer()">use to hide</button>
+        <button (click)="onClearContainer()">reset</button>
+        <button (click)="onDeleteContainer()">delete</button>
+    </div>
+</div>

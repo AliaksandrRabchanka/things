@@ -1,0 +1,22 @@
+.wrapper {
+    border: 1px dashed;
+    padding: 20px;
+    border-radius: 5px;
+}
+.button-panel {
+    margin: 10px 0;
+}
+p {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+.error {
+    font-size: 18px;
+    color: red;
+}
+.content-panel {
+    height: calc(75vh - 65px);
+    padding: 5px 5px 0 0;
+    overflow: auto;
+}

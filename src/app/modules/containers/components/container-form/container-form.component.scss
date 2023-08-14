@@ -1,0 +1,9 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+
+    label:first-letter{
+        text-transform: uppercase;
+    }
+}

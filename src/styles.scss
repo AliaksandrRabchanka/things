@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    font-size: 14px;
+    font-family: 'Sans Regular', 'Sans Bold', Arial, sans-serif;
+    color: black;
+  }
+
+  button {
+    padding: 5px;
+    margin-left: 5px;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-left: 10px;
+  }

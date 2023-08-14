@@ -1,0 +1,20 @@
+.things {
+  &__header {
+    font-size: 18px;
+  }
+  &__page-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 30px);
+
+    &_content {
+      flex: 1 0 auto;
+      margin: 10px;
+    }
+
+    &_footer {
+      font-size: 20px;
+      flex: 0 0 auto;
+    }
+  }
+}

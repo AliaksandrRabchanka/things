@@ -1,0 +1,52 @@
+<div class="thing-form-wrapper">
+    <form *ngIf="thing" (ngSubmit)="onSaveThing()" id="thing-form" #form="ngForm">
+        <div class="form-group">
+            <label for="id">id</label>
+            <input id="id"
+                   type="text"
+                   class="form-control"
+                   name="id"
+                   placeholder="id"
+                   disabled
+                   [(ngModel)]="thing.id" />
+        </div>
+
+        <div class="form-group">
+            <label for="id">title</label>
+            <input id="title"
+                   type="text"
+                   class="form-control"
+                   name="title"
+                   placeholder="title"
+                   required
+                   [(ngModel)]="thing.title" />
+        </div>
+
+        <div class="form-group">
+            <label for="description">description</label>
+            <input id="description"
+                   type="text"
+                   class="form-control"
+                   name="description"
+                   placeholder="description"
+                   required
+                   [(ngModel)]="thing.description" />
+        </div>
+
+        <div class="form-group">
+            <label for="volume">volume</label>
+            <input id="volume"
+                   type="number"
+                   min="0"
+                   class="form-control"
+                   name="volume"
+                   placeholder="volume"
+                   required
+                   [(ngModel)]="thing.volume" />
+        </div>
+        <button type="button" (click)="closeThingForm()">Cancel</button>
+        <button type="submit"
+                form="thing-form"
+                [disabled]="form.invalid">Save</button>
+    </form>
+</div>

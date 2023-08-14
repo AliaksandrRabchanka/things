@@ -1,0 +1,129 @@
+{
+  "things": [
+    {
+      "id": 1,
+      "title": "keys",
+      "description": "keys description",
+      "volume": 0.3,
+      "type": "thing",
+      "selected": false,
+      "isHidden": false,
+      "parent": null
+    },
+    {
+      "id": 2,
+      "title": "smartphone",
+      "description": "smartphone description",
+      "volume": 0.05,
+      "type": "thing",
+      "selected": false,
+      "isHidden": false,
+      "parent": null
+    },
+    {
+      "id": 3,
+      "title": "credit card",
+      "description": "credit cart description",
+      "volume": 0.9,
+      "type": "thing",
+      "selected": false,
+      "isHidden": false,
+      "parent": null
+    }
+  ],
+  "containers": [
+    {
+      "id": 1,
+      "title": "container-1",
+      "description": "container-1 description",
+      "volume": 2.5,
+      "type": "container",
+      "availableVolume": 2.5,
+      "canUseToHide": false,
+      "hiddenThings": {
+        "containers": [],
+        "things": []
+      },
+      "isHidden": false,
+      "parent": null,
+      "selected": false
+    },
+    {
+      "id": 2,
+      "title": "container-2",
+      "description": "container-2 description",
+      "volume": 1.7,
+      "type": "container",
+      "selected": false,
+      "isHidden": false,
+      "parent": null,
+      "canUseToHide": false,
+      "availableVolume": 1.7,
+      "hiddenThings": {
+        "containers": [],
+        "things": []
+      }
+    },
+    {
+      "id": 3,
+      "title": "container-3",
+      "description": "container-3 description",
+      "volume": 0.8,
+      "type": "container",
+      "isHidden": false,
+      "parent": null,
+      "canUseToHide": false,
+      "availableVolume": 0.8,
+      "hiddenThings": {
+        "containers": [],
+        "things": []
+      },
+      "selected": false
+    },
+    {
+      "id": 4,
+      "title": "container-4",
+      "description": "container-4 description",
+      "volume": 2,
+      "type": "container",
+      "selected": false,
+      "isHidden": false,
+      "parent": null,
+      "availableVolume": 2,
+      "canUseToHide": false,
+      "hiddenThings": {
+        "containers": [],
+        "things": []
+      }
+    },
+    {
+      "id": 5,
+      "title": "container-5",
+      "description": "container-5 description",
+      "volume": 1,
+      "type": "container",
+      "selected": false,
+      "isHidden": false,
+      "parent": null,
+      "availableVolume": 1,
+      "canUseToHide": false,
+      "hiddenThings": {
+        "containers": [],
+        "things": []
+      }
+    }
+  ],
+  "links": [
+    {
+      "id": 1,
+      "title": "main"
+    },
+    {
+      "id": 2,
+      "title": "login"
+    }
+  ],
+  "buildVersion": {
+    "version": "1.0.0"
+  }
+}

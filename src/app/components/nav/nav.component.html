@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let link of links" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      <a routerLink="{{link.title}}" class="link">{{link.title}}</a>
+    </li>
+ </ul>

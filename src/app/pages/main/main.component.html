@@ -1,0 +1,5 @@
+<div class="main-wrapper">
+    <app-things-list [thing]="thing" (showModal)="onShowModal($event)"></app-things-list>
+    <app-modal *ngIf="showModal$ | async" (showModal)="onShowModal($event)" [container]="container" [thing]="thing"></app-modal>
+    <app-containers-list [container]="container" (showModal)="onShowModal($event)"></app-containers-list>
+</div>

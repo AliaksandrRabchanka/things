@@ -1,0 +1,5 @@
+<div *ngIf="thing || container"class="modal-wrapper">
+    <p>{{title}}</p>
+    <app-thing-form *ngIf="thing" [thing]="thing" (closeModal)="onCloseModal()"></app-thing-form>
+    <app-container-form *ngIf="container" [container]="container" (closeModal)="onCloseModal()"></app-container-form>
+</div>

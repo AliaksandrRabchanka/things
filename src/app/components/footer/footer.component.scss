@@ -1,0 +1,15 @@
+.footer {
+    &-wrapper {
+      display: flex;
+      height: 60px;
+      color: white;
+      background: darkgray;
+      align-items: center;
+      justify-content: flex-end;
+      user-select: none;
+      padding-right: 14px;
+    }
+    &__build-version {
+      margin-right: 10px;
+    }
+  }

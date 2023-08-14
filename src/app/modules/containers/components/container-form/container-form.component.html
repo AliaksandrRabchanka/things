@@ -1,0 +1,52 @@
+<div class="container-form-wrapper">
+    <form *ngIf="container" (ngSubmit)="onSaveContainer()" id="container-form" #form="ngForm">
+        <div class="form-group">
+            <label for="id">id:</label>
+            <input id="id"
+                   type="text"
+                   class="form-control"
+                   name="id"
+                   placeholder="id"
+                   disabled
+                   [(ngModel)]="container.id" />
+        </div>
+
+        <div class="form-group">
+            <label for="id">title:</label>
+            <input id="title"
+                   type="text"
+                   class="form-control"
+                   name="title"
+                   placeholder="title"
+                   required
+                   [(ngModel)]="container.title" />
+        </div>
+
+        <div class="form-group">
+            <label for="description">description:</label>
+            <input id="description"
+                   type="text"
+                   class="form-control"
+                   name="description"
+                   placeholder="description"
+                   required
+                   [(ngModel)]="container.description" />
+        </div>
+
+        <div class="form-group">
+            <label for="volume">volume:</label>
+            <input id="volume"
+                   type="number"
+                   min="0"
+                   class="form-control"
+                   name="volume"
+                   placeholder="volume"
+                   required
+                   [(ngModel)]="container.volume" />
+        </div>
+        <button type="button" (click)="closeContainerForm()">Cancel</button>
+        <button type="submit"
+                form="container-form"
+                [disabled]="form.invalid">Save</button>
+    </form>
+</div>

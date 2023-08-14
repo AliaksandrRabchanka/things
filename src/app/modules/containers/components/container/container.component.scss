@@ -1,0 +1,31 @@
+.container-wrapper {
+    border: 1px dashed grey;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.container-controls {
+    margin: 0 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.available {
+border: 3px dashed green;
+}
+
+.selected {
+    background-color: lightgreen;
+}
+
+.hidden {
+    background-color: lightgray;
+    opacity: .7;
+}

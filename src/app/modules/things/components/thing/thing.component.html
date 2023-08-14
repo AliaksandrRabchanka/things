@@ -1,0 +1,22 @@
+<div class="thing-wrapper" [ngClass]="{'selected': thing.selected, 'hidden': thing.isHidden}">
+    <p>{{thing.title}}</p>
+    <ul>
+        <li>
+            <span>{{thing.description}}</span>
+        </li>
+        <li><span>volume: </span>
+            <span>{{thing.volume}}</span>
+        </li>
+        <li *ngIf="thing.parent">
+            <span>parent container: </span>
+            <span>{{thing.parent}}</span>
+        </li>
+    </ul>
+
+    <div class="thing-controls">
+        <button (click)="onEditThing()">edit</button>
+        <button [disabled]="thing.isHidden" (click)="onHideThing()">hide</button>
+        <button (click)="onClearThing()">reset</button>
+        <button (click)="onDeleteThing()">delete</button>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="wrapper">
+    <p>Containers</p>
+    <div class="button-panel">
+        <button (click)="onCreateContainer()">create</button>
+        <!-- <button (click)="onUncheckContainers()">clear all</button> -->
+    </div>
+    <p class="error" *ngIf="(containersError$ | async) as errorMessage">{{errorMessage}}</p>
+    <div class="content-panel">
+        <app-container
+        *ngFor="let container of containers$ | async; trackBy: trackByFn"
+        [container]="container"
+        (editContainer)="onEditContainer($event)"
+        (hideContainer)="onHideContainer($event)"
+        (deleteContainer)="onDeleteContainer($event)">
+       </app-container>
+    </div>
+</div>
