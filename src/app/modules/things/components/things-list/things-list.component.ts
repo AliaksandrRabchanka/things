@@ -52,6 +52,10 @@ export class ThingsListComponent implements OnInit {
     this.thingsFacadeService.deleteThing(thing);
   }
 
+  onCloseError() {
+    this.thingsError$ = null;
+  }
+
   onUncheckThings(): void {
     this.checkService.clearThings();
   }

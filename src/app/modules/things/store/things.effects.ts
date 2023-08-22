@@ -41,10 +41,10 @@ export class ThingsEffects {
   )
 );
 
-updateThing$: Observable<Action> = createEffect(() => 
+  updateThing$: Observable<Action> = createEffect(() => 
     this.actions$.pipe(
       ofType(ThingsActions.updateThing),
-      switchMap(({thing}) => this.httpThingsService.updateThing(thing).pipe(
+      concatMap(({thing}) => this.httpThingsService.updateThing(thing).pipe(
           map((updatedThing: ThingModel) => {
             return ThingsActions.updateThingSuccess({ thing: updatedThing })
           }),

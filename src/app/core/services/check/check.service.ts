@@ -106,7 +106,7 @@ export class CheckService {
     this.containersFacadeService.clearContainer(container);
   }
 
-  clearContainer(el: ContainerModel, updateDb: boolean): void {
+  clearContainer(el: ContainerModel): void {
     const container = { ...el};
     container.availableVolume = container.volume;
     container.selected = false;
@@ -119,7 +119,7 @@ export class CheckService {
     };
 
     this.containersFacadeService.clearContainer(container);
-    if(updateDb) this.containersFacadeService.updateContainer(container);
+    this.containersFacadeService.updateContainer(container);
   }
 
   clearResetContainers(clear: boolean): void {
@@ -127,19 +127,19 @@ export class CheckService {
       first(),
       ).subscribe(containers => {
         containers.forEach(container => {
-          clear ? this.clearContainer(container, false) : this.resetContainer(container);
+          clear ? this.clearContainer(container) : this.resetContainer(container);
         })
       })
   }
 
-  clearThing(el: ThingModel, updateDb: boolean): void {
+  clearThing(el: ThingModel): void {
     const thing = { ...el};
     thing.isHidden = false;
     thing.parent = null;
     thing.selected = false;
 
     this.thingsFacadeService.clearThing(thing);
-    if(updateDb) this.thingsFacadeService.updateThing(thing);
+    this.thingsFacadeService.updateThing(thing);
   }
 
   clearThings(): void {
@@ -147,7 +147,7 @@ export class CheckService {
       first(),
       ).subscribe(things => {
         things.forEach(thing => {
-          this.clearThing(thing, false);
+          this.clearThing(thing);
         })
       })
   }

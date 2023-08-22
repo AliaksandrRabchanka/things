@@ -11,6 +11,11 @@ p {
     font-size: 28px;
     font-weight: bold;
 }
+
+.error-wrapper {
+    display: flex;
+}
+
 .error {
     font-size: 18px;
     color: red;

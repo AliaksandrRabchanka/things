@@ -53,6 +53,10 @@ export class ContainersListComponent implements OnInit {
     this.containersFacadeService.deleteContainer(container);
   }
 
+  onCloseError() {
+    this.containersError$ = null;
+  }
+
   onUncheckContainers(): void {
     this.checkService.clearResetContainers(true);
   }

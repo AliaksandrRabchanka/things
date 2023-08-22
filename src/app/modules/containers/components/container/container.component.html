@@ -20,7 +20,7 @@
 
     <div class="container-controls">
         <button (click)="onEditContainer()">edit</button>
-        <button [disabled]="container.isHidden" (click)="onHideContainer()">hide</button>
+        <button [disabled]="container.isHidden || container.selected" (click)="onHideContainer()">hide</button>
         <button [disabled]="!container.canUseToHide" (click)="onUseToHideContainer()">use to hide</button>
         <button (click)="onClearContainer()">reset</button>
         <button (click)="onDeleteContainer()">delete</button>

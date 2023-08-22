@@ -56,6 +56,6 @@ export class ContainerComponent implements OnInit {
   }
 
   onClearContainer(): void {
-    this.checkService.clearContainer(this.container, true);
+    this.checkService.clearContainer(this.container);
   }
 }

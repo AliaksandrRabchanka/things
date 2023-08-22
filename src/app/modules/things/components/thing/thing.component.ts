@@ -43,6 +43,6 @@ export class ThingComponent implements OnInit{
   }
 
   onClearThing(): void {
-    this.checkService.clearThing(this.thing, true);
+    this.checkService.clearThing(this.thing);
   }
 }

@@ -2,9 +2,12 @@
     <p>Containers</p>
     <div class="button-panel">
         <button (click)="onCreateContainer()">create</button>
-        <!-- <button (click)="onUncheckContainers()">clear all</button> -->
+        <button (click)="onUncheckContainers()">clear all</button>
     </div>
-    <p class="error" *ngIf="(containersError$ | async) as errorMessage">{{errorMessage}}</p>
+    <div class="error-wrapper" *ngIf="(containersError$ | async) as errorMessage">
+        <p class="error">{{errorMessage}}</p>
+        <button (click)="onCloseError()">x</button>
+    </div>
     <div class="content-panel">
         <app-container
         *ngFor="let container of containers$ | async; trackBy: trackByFn"

@@ -2,9 +2,12 @@
     <p>Things</p>
     <div class="button-panel">
         <button (click)="onCreateThing()">create</button>
-        <!-- <button (click)="onUncheckThings()">clear all</button> -->
+        <button (click)="onUncheckThings()">clear all</button>
     </div>
-    <p class="error" *ngIf="(thingsError$ | async) as errorMessage">{{errorMessage}}</p>
+    <div class="error-wrapper" *ngIf="(thingsError$ | async) as errorMessage">
+        <p class="error">{{errorMessage}}</p>
+        <button (click)="onCloseError()">x</button>
+    </div>
     <div class="content-panel">
         <app-thing
         *ngFor="let thing of things$ | async; trackBy: trackByFn"

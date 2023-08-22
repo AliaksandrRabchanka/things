@@ -46,7 +46,7 @@ export class ContainersEffects {
   updateContainer$: Observable<Action> = createEffect(() => 
     this.actions$.pipe(
       ofType(ContainersActions.updateContainer),
-      switchMap(({container}) => this.httpContainerService.updateContainer(container).pipe(
+      concatMap(({container}) => this.httpContainerService.updateContainer(container).pipe(
           map((updatedContainer: ContainerModel) => {
             return ContainersActions.updateContainerSuccess({ container: updatedContainer })
           }),

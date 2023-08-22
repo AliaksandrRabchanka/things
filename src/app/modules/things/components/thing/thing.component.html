@@ -15,7 +15,7 @@
 
     <div class="thing-controls">
         <button (click)="onEditThing()">edit</button>
-        <button [disabled]="thing.isHidden" (click)="onHideThing()">hide</button>
+        <button [disabled]="thing.isHidden || thing.selected" (click)="onHideThing()">hide</button>
         <button (click)="onClearThing()">reset</button>
         <button (click)="onDeleteThing()">delete</button>
     </div>
