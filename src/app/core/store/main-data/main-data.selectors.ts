@@ -1,7 +1,7 @@
 import { createFeatureSelector, createSelector, MemoizedSelector } from '@ngrx/store';
 import { AppState } from '../';
 
-import { BuildVersionModel, LinkModel } from '../../models';
+import { BuildVersionModel, LinkModel, UserModel } from '../../models';
 
 import { MainDataState, mainDataKey } from './main-data.state';
 
@@ -22,5 +22,10 @@ export const selectLinks: MemoizedSelector<AppState, LinkModel[]> = createSelect
 export const selectShowModal: MemoizedSelector<AppState, boolean> = createSelector(
   MainDataFeatureSelector,
   (state: MainDataState): boolean => state.showModal,
+);
+
+export const selectUser: MemoizedSelector<AppState, UserModel> = createSelector(
+  MainDataFeatureSelector,
+  (state: MainDataState): UserModel => state.user,
 );
 

@@ -29,6 +29,14 @@ const reducer: ActionReducer<MainDataState> = createReducer(
       showModal,
     }),
   ),
+
+  on(
+    MainDataActions.updateUser,
+    (state, { user }): MainDataState => ({
+      ...state,
+      user,
+    }),
+  ),
 )
 
 export function mainDataStateReducer(state: MainDataState, action: Action): MainDataState {

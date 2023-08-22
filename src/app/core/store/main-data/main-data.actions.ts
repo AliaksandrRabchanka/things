@@ -1,6 +1,6 @@
 import { createAction, props, Action } from '@ngrx/store';
 
-import { BuildVersionModel, LinkModel } from '../../models';
+import { BuildVersionModel, LinkModel, UserModel } from '../../models';
 
 export const getBuildVersion = createAction(
   '[Main Data] getting build version',
@@ -37,4 +37,23 @@ export const getShowModal = createAction(
 export const updateShowModal = createAction(
   '[Main Data] update modal flag',
   props<{ showModal: boolean }>(),
+);
+
+export const getUser = createAction(
+  '[Main Data] get user',
+);
+
+export const getUserSuccess = createAction(
+  '[Main Data] successfully get user',
+  props<{ user: UserModel }>(),
+);
+
+export const getUserFailed = createAction(
+  '[Main Data] getting user failed',
+  props<{ message: string }>(),
+);
+
+export const updateUser = createAction(
+  '[Main Data] update user',
+  props<{ user: UserModel | null }>(),
 );

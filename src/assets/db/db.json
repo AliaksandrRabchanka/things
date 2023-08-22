@@ -125,5 +125,13 @@
   ],
   "buildVersion": {
     "version": "1.0.0"
-  }
+  },
+  "users": [
+    {
+      "id": 1,
+      "name": "user",
+      "email": "user@domen.com",
+      "password": "123"
+    }
+  ]
 }

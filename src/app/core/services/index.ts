@@ -1,2 +1,5 @@
 export * from './api'
+export * from './authentication'
 export * from './check'
+export * from './interceptors'
+export * from './guards'

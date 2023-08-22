@@ -1,31 +1,53 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent, MainComponent } from './pages';
 
-const RoutesConfig = {
-    main: 'main',
-    login: 'login'
-  };
+import { AuthGuard, ErrorRoutesConfig, RoutesConfig } from './core';
+import { ErrorPageComponent, LoginPageComponent, MainPageComponent } from './pages';
 
 const routes: Routes = [
     {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: RoutesConfig.main,
+      path: '',
+      children: [
+        {
+          path: '',
+          pathMatch: 'full',
+          redirectTo: RoutesConfig.main,
+        },
+        {
+            path: RoutesConfig.login,
+            pathMatch: 'full',
+            component: LoginPageComponent,
+        },
+        {
+            path: RoutesConfig.main,
+            pathMatch: 'full',
+            component: MainPageComponent,  canActivate: [AuthGuard]
+        },
+      ]
     },
     {
-        path: RoutesConfig.login,
-        pathMatch: 'full',
-        component: LoginComponent,
-    },
-    {
-        path: RoutesConfig.main,
-        pathMatch: 'full',
-        component: MainComponent,
+      path: RoutesConfig.error,
+      children: [
+        {
+          path: ErrorRoutesConfig.serverInternalError,
+          component: ErrorPageComponent,
+        },
+        {
+          path: ErrorRoutesConfig.notEnoughPermissions,
+          component: ErrorPageComponent,
+        },      {
+          path: ErrorRoutesConfig.notFound,
+          component: ErrorPageComponent,
+        },
+        {
+          path: ErrorRoutesConfig.accessDenied,
+          component: ErrorPageComponent,
+        }
+      ],
     },
     {
       path: '**',
-      redirectTo: `${RoutesConfig.main}`,
+      redirectTo: `${RoutesConfig.error}/${ErrorRoutesConfig.notFound}`,
     },
   ];
   

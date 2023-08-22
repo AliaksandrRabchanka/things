@@ -3,19 +3,28 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 
-import { LoginComponent, MainComponent } from '.';
-import { ContainerComponent, ContainerFormComponent, ContainersListComponent } from '../modules/containers';
-import { ThingComponent, ThingFormComponent, ThingsListComponent } from '../modules/things';
+import { ErrorPageComponent, LoginPageComponent, MainPageComponent } from '.';
 import { ModalComponent } from '../components';
+import { 
+  ContainerComponent,
+  ContainerFormComponent,
+  ContainersListComponent,
+  ThingComponent,
+  ThingFormComponent,
+  ThingsListComponent,
+  LoginFormComponent
+} from '../modules';
 
 @NgModule({
   declarations: [
+    ErrorPageComponent,
+    LoginPageComponent,
+    MainPageComponent,
+    ModalComponent,
     ContainerComponent,
     ContainerFormComponent,
     ContainersListComponent,
-    LoginComponent,
-    MainComponent,
-    ModalComponent,
+    LoginFormComponent,
     ThingComponent,
     ThingFormComponent,
     ThingsListComponent,
